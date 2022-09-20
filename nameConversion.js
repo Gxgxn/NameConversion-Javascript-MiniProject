@@ -6,8 +6,7 @@ let snake = document.getElementById("snake-case");
 let snakeScreaming = document.getElementById("screaming-snake-case");
 let kebab = document.getElementById("kebab-case");
 let kebabScreaming = document.getElementById("screaming-kebab-case");
-
-btn.onclick = () => {
+btn.addEventListener("click", () => {
   if (input.value) {
     console.log();
     camel.innerText = camelCase(input.value);
@@ -23,7 +22,7 @@ btn.onclick = () => {
       () => (input.placeholder = "Enter the text")
     );
   }
-};
+});
 input.removeEventListener;
 
 function camelCase(str) {

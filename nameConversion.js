@@ -27,21 +27,14 @@ btn.onclick = () => {
 input.removeEventListener;
 
 function camelCase(str) {
-  let inputArr = str
+  return str
     .trim()
     .toLowerCase()
     .replace(/[,\?\.]/g, "")
-    .split(" ");
-  console.log(inputArr);
-  let outArr = [];
-  for (let word of inputArr) {
-    if (word === inputArr[0]) {
-      outArr.push(word);
-    } else if (word) {
-      outArr.push(word.replace(word[0], word[0].toUpperCase()));
-    }
-  }
-  return outArr.join("");
+    .replace(/\s\b(\w)/g, (firstChar) => {
+      return firstChar.toUpperCase();
+    })
+    .replace(/\s+/g, "");
 }
 
 function pascalCase(string) {
